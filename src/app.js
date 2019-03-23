@@ -3,9 +3,15 @@ const express = require('express')
 
 const app = express()
 
+// Define paths for express cfg
 const publicDirectoryPath = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname, '../templates')
 
+// Setup hbs engine and views location
 app.set('view engine', 'hbs')
+app.set('views', viewsPath)
+
+// Setup static dir to serve
 app.use(express.static(publicDirectoryPath))
 
 app.get('', (req, res) => {
