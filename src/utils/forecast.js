@@ -16,7 +16,10 @@ const forecast = (latitude, longitude, callback) => {
           body.currently.temperature +
           ' degress out. There is a ' +
           body.currently.precipProbability +
-          '% chance of rain.'
+          '% chance of rain' +
+          ' and the wind is blowing at ' +
+          body.currently.windSpeed +
+          ' mph.'
       )
     }
   })
